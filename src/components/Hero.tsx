@@ -1,14 +1,20 @@
 import { useState } from "react"
 import LgaPage from "./LgaPage";
+import Request from "./Request";
 
 const Hero = () => {
   const [servicebutton, showServicebutton] = useState<boolean>(false);
   const [showLgaPage, setShowLgaPage] = useState<boolean>(false);
+  const [showRequestPage, setShowRequestPage] = useState<boolean>(false);
+
   const handleservice = ()=>{
     showServicebutton(!servicebutton);
   }
   const LGAbutton = () =>{
     setShowLgaPage(!showLgaPage)
+  }
+  const Requestbutton = () =>{
+    setShowRequestPage(!showRequestPage)
   }
   return (
     <div className="p-6 md:px-12 mt-24 md:mt-16 md:mt-0">
@@ -24,12 +30,12 @@ const Hero = () => {
             <button className={`transition-all duration-100 ${servicebutton ? 'opacity-0 hidden' : 'opacity-100' } bg-[#005C30] hover:bg-green-700 text-white w-8/12 md:w-5/12 py-4 rounded-md`} onClick={handleservice}>
               Request for Services
             </button>
-            <div className={`transition-all duration-200 flex ${servicebutton ? 'opacity-100' : 'opacity-0' } gap-x-8`}>
-            <button className="bg-[#005C30] text-white w-8/12 md:w-4/12 py-4 rounded-md" onClick={LGAbutton}>
+            <div className={`transition-all duration-200 flex ${servicebutton ? 'opacity-100' : 'opacity-0 pointer-events-none' } gap-x-8`}>
+            <button className="bg-[#005C30] text-white w-5/12 md:w-5/12 py-4 rounded-md px-2" onClick={LGAbutton}>
               Select LGA
             </button>
 
-            <button className="bg-[#edbe23] hover:bg-green-900 text-white w-8/12 md:w-4/12 py-4 rounded-md ">
+            <button className="bg-[#edbe23] hover:bg-[#c6a025] text-white w-7/12 md:w-5/12  py-4 rounded-md" onClick={Requestbutton}>
               Request Status
             </button>
             </div>
@@ -37,8 +43,8 @@ const Hero = () => {
 
         </div>
         <div className="md:w-5/12 md:mt-12 px-12">
-          <img src="images/illustration-hero.svg" className={`transition-all duration-100 ${servicebutton ? 'opacity-0 hidden' : 'opacity-100' }`}/>
-          <img src="images/accept-illustration.svg" className={`transition-all duration-200 ${servicebutton ? 'opacity-100' : 'opacity-0 hidden'} `} />
+          <img src="images/illustration-hero.svg" className={`transition-all duration-100 md:mt-12 md:scale-125 lg:scale-100 ${servicebutton ? 'opacity-0 hidden' : 'opacity-100' }`}/>
+          <img src="images/accept-illustration.svg" className={`transition-all duration-200 md:mt-12 md:scale-125 lg:scale-100 ${servicebutton ? 'opacity-100' : 'opacity-0 hidden'} `} />
         </div>
        
 
@@ -46,6 +52,7 @@ const Hero = () => {
 
       </div>
       {showLgaPage && <LgaPage />}
+      {showRequestPage && <Request />}
       
       </div>
   )
