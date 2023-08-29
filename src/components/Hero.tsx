@@ -1,6 +1,5 @@
 import { useState } from "react"
 import LgaPage from "./LgaPage";
-import Request from "./Request";
 
 const Hero = () => {
   const [servicebutton, showServicebutton] = useState<boolean>(false);
