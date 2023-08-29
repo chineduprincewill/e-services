@@ -31,7 +31,7 @@ const LgaPage = () => {
           </div>
         </div>
         <div className=" w-full flex md:flex-wrap flex-col md:flex-row md:mt-12 mt-8 gap-y-8 md:justify-between">
-        {selectedRegion && data[selectedRegion].map((item, index) => (
+        {selectedRegion && data[selectedRegion] && data[selectedRegion].map((item, index) => (
             <div className="lg:w-[30%] md:w-[45%] w-full border h-60 shadow flex flex-col p-4 justify-evenly" key={index}>
                 <h1 className="text-2xl font-semibold">{item.title}</h1>
                 <p className="text-sm font-thin">{item.desc}</p>
