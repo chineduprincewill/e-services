@@ -1,12 +1,17 @@
 import data from '../data/data'
 import { useState } from 'react';
+import Notloggedin from './Notloggedin';
 
 
 const LgaPage = () => {
     const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
+    const [checksignedin, setChecksignedin] = useState<boolean>(false)
     const handleRegionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedRegion(event.target.value);
     };
+    const handleguest = ()=>{
+        setChecksignedin(true)
+    }
   return (
     <div className=" transition-all duration-100">
         <div className="">
@@ -32,7 +37,7 @@ const LgaPage = () => {
         </div>
         <div className=" w-full flex md:flex-wrap flex-col md:flex-row md:mt-12 mt-8 gap-y-8 md:justify-between">
         {selectedRegion && data[selectedRegion] && data[selectedRegion].map((item, index) => (
-            <div className="lg:w-[30%] md:w-[45%] w-full border h-60 shadow flex flex-col p-4 justify-evenly" key={index}>
+            <div className="lg:w-[30%] md:w-[45%] w-full border h-60 shadow flex flex-col p-4 justify-evenly" key={index} onClick={handleguest}>
                 <h1 className="text-2xl font-semibold">{item.title}</h1>
                 <p className="text-sm font-thin">{item.desc}</p>
 
@@ -44,6 +49,7 @@ const LgaPage = () => {
             
 
         </div>
+        {checksignedin && <Notloggedin />}
     </div>
   )
 }
