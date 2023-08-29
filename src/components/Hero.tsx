@@ -56,7 +56,7 @@ const Hero = () => {
           <img src="images/accept-illustration.svg" className={`transition-all duration-200 md:mt-12 scale-75 md:scale-125 lg:scale-75 ${servicebutton ? 'opacity-100' : 'opacity-0 hidden'} ${showRequestPage ? 'opacity-0 hidden' : 'opacity-100'} `} />
           {showRequestPage && <div className="request-input mt-12 w-full flex md:flex-row flex-col justify-between gap-y-6">
             <input type="text" placeholder="Input your Request Code" className="lg:w-9/12 md:w-7/12 w-full p-4 outline outline-[#005C30] outline-rounded-md rounded-md"/>
-            <button type="submit" className="bg-[#005C30] text-white rounded-md md:px-4 text-sm lg:text-base h-16 mx-8">Check Request Status</button>
+            <button type="submit" className="bg-[#005C30] text-white rounded-md md:px-4 text-sm lg:text-base h-16 md:mx-8">Check Request Status</button>
 
         </div>}
         </div>
