@@ -36,7 +36,7 @@ const Hero = () => {
           <p className="mt-2 md:mt-4 pr-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, nulla. Dolor dolorum aut incidunt debitis magnam voluptates, perferendis corporis deserunt, fuga vero, minima commodi id provident! Porro, repellendus hic? Ipsam?</p>
 
           <div className="mt-6">
-            <button className={`transition-all duration-100 ${servicebutton ? 'opacity-0 hidden' : 'opacity-100' } bg-[#005C30] hover:bg-green-700 text-white w-8/12 md:w-5/12 py-4 rounded-md`} onClick={handleservice}>
+            <button className={`transition-all duration-100 ${servicebutton ? 'opacity-0 hidden' : 'opacity-100' } bg-[#005C30] hover:bg-green-700 text-white w-8/12 md:w-9/12 lg:w-5/12 py-4 rounded-md`} onClick={handleservice}>
               Request for Services
             </button>
             <div className={`transition-all duration-200 flex ${servicebutton ? 'opacity-100' : 'opacity-0 pointer-events-none' } gap-x-8`}>
